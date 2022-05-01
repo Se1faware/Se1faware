@@ -1,5 +1,4 @@
 ### Hello，World 👋
-:nbsp;
 <!--
 **jiaoyanxia/jiaoyanxia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -20,8 +19,11 @@ Here are some ideas to get you started:
 
 
 🧿 I am a sophomore majoring in software engineering
+
 🕊️ Where am i： On the road of front-end engineer
+
 🌱 I am currently learning data structures
+
 📫 How to reach me: QQ - 978309462
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
