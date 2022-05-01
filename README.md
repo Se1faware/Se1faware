@@ -16,11 +16,12 @@ Here are some ideas to get you started:
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
 
 ### Hello，World 👋
+
 - 🧿 I am a sophomore majoring in software engineering
 - 🕊️ Where am i： On the road of front-end engineer
 - 🌱 I am currently learning data structures
 - 📫 How to reach me: QQ - 978309462
-- ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh
+<!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
 
 <!-- - :orange_book: Focusing on Swift & iOS
