@@ -29,14 +29,14 @@ Here are some ideas to get you started:
 
 <br>
 
-<h3>I always produce best result.</h3>
+<!-- <h3>I always produce best result.</h3>
 
 <br>
 
 - Frontend
 - Backend
 - Web Development
-- Blockchain & Smart contract
+- Blockchain & Smart contract -->
 
 ## My Skills
 
@@ -117,7 +117,7 @@ Here are some ideas to get you started:
         <br>NPM
     </td>
   </tr>
-  <tr>
+<!--   <tr>
     <td align="center" width="96">
       <a href="#PHP" >
         <img src="https://i.ibb.co/LzmYpDX/146-1466902-php-logo-png-transparent-php-logo-png-png-removebg-preview.png" width="48" height="48" alt="PHP" />
@@ -154,7 +154,7 @@ Here are some ideas to get you started:
       </a>
       <br>Rails
     </td>
-  </tr>
+  </tr> -->
   <tr>
     <td align="center" width="96">
       <a href="#SQL" >
@@ -202,7 +202,7 @@ Here are some ideas to get you started:
 
 ✔ <b>Front-end</b> : React js / Next.js / TypeScript / Vue.js / TailwindCSS <br>
 ✔ <b>Back-end</b> : Node.js / Express / Nest.js / Django  <br>
-✔ <b>Database</b> : Mysql /MongoDB <br>
+✔ <b>Database</b> : Mysql /MongoDB / Redis <br>
 ✔ <b>Programming-languages</b> : JavaScript / HTML / CSS / Python / Java <br>
 <br>
 
