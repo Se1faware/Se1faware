@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 
 
 
-🧿 I am a sophomore majoring in software engineering
+🧿 I am a junior majoring in software engineering
 
 🕊️ Where am i： On the road of Full-Stack engineer
 
