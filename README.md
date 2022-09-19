@@ -27,8 +27,46 @@ Here are some ideas to get you started:
 📫 How to reach me: QQ - 978309462
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
+I always produce best result.
 
-<!-- - :orange_book: Focusing on Swift & iOS
-- :hammer: Creator of applications and frameworks
-- :ram: Founder the ObjCCN
-- :meat_on_bone: Meat lover -->
+Frontend
+Backend
+Web Development
+Blockchain & Smart contract
+My Skills
+javascript
+Javascript
+TypeScript
+TypeScript	React
+React	Redux
+Redux	Vuejs
+Vue JS	Nuxtjs
+Nuxt JS
+Node
+Node	Express
+Express	Electron
+Electron	GraphQL
+GraphQL	Mongoose
+Mongoose	NPM
+NPM
+PHP
+PHP	Laravel
+Laravel	Python
+Python	Django
+Django	Go
+Go	Rails
+Rails
+SQL
+SQL	MySQL
+MySQL	PostgreSQL
+PostgreSQL	MongoDB
+MongoDB	Redis
+Redis	JSON
+JSON
+
+Core skills
+✔ Front-end : React js / Next.js / TypeScript / Vue.js / TailwindCSS / Material UI
+✔ Back-end : Node.js / Express / Nest.js / Django / Laravel
+✔ Database : Mysql / PostgreSQL /MongoDB
+✔ Programming-languages : JavaScript / HTML / CSS / PHP / Python
+
