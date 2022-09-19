@@ -20,9 +20,10 @@ Here are some ideas to get you started:
 
 🧿 I am a sophomore majoring in software engineering
 
-🕊️ Where am i： On the road of front-end engineer
+🕊️ Where am i： On the road of Full-Stack engineer
 
-🌱 I am currently learning data structures
+<!-- 🌱 I am currently learning data structures -->
+🌱 I am currently learning BlockChain
 
 📫 How to reach me: QQ - 978309462
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
@@ -93,22 +94,21 @@ Here are some ideas to get you started:
         <br>Express
     </td>
     <td align="center" width="96">
-        <a href="#Express">
+        <a href="#Electron">
             <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/electron/electron.png" width="48" height="48" alt="Electron" />
         </a>
         <br>Electron
     </td>
     <td align="center" width="96">
-        <a href="#GraphQL">
+        <a href="#Koa">
             <img src="https://raw.githubusercontent.com/github/explore/e65ef46ef3e7bc457c93622f6a89fe8d3fd131d5/topics/graphql/graphql.png" width="48" height="48" alt="GraphQL" />
         </a>
         <br>GraphQL
-    </td>
-       <td align="center" width="96">
-        <a href="#Mongoose">
-            <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongoose/mongoose.png" width="48" height="48" alt="Mongoose" />
-        </a>
-        <br>Mongoose
+    <td align="center" width="96">
+      <a href="#JSON">
+        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/json/json.png" width="48" height="48" alt="JSON" />
+      </a>
+      <br>JSON
     </td>
     <td align="center" width="96">
         <a href="#NPM">
@@ -169,10 +169,16 @@ Here are some ideas to get you started:
       <br>MySQL
     </td>
     <td align="center" width="96">
-      <a href="#PostgreSQL">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png" width="48" height="48" alt="PostgreSQL" />
+      <a href="#Python" >
+        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="48" height="48" alt="Python" />
       </a>
-      <br>PostgreSQL
+      <br>Python
+    </td>
+    <td align="center" width="96">
+      <a href="#Django" >
+        <img src="https://raw.githubusercontent.com/github/explore/7456fdff59816d37ef383a6c8f32a26ff7332db2/topics/django/django.png" width="48" height="48" alt="Django" />
+      </a>
+      <br>Django
     </td>
     <td align="center" width="96">
       <a href="#MongoDB">
@@ -185,12 +191,6 @@ Here are some ideas to get you started:
         <img src="https://e7.pngegg.com/pngimages/540/594/png-clipart-redis-distributed-cache-go-database-caching-github-data-structure-redis-thumbnail.png" width="48" height="48" alt="Redis" />
       </a>
       <br>Redis
-    </td>
-    <td align="center" width="96">
-      <a href="#JSON">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/json/json.png" width="48" height="48" alt="JSON" />
-      </a>
-      <br>JSON
     </td>
   </tr>
 </table>
