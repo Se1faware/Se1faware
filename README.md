@@ -200,10 +200,10 @@ Here are some ideas to get you started:
 
 ## Core skills
 
-✔ <b>Front-end</b> : React js / Next.js / TypeScript / Vue.js / TailwindCSS / Material UI <br>
-✔ <b>Back-end</b> : Node.js / Express / Nest.js / Django / Laravel  <br>
-✔ <b>Database</b> : Mysql / PostgreSQL /MongoDB <br>
-✔ <b>Programming-languages</b> : JavaScript / HTML / CSS / PHP / Python <br>
+✔ <b>Front-end</b> : React js / Next.js / TypeScript / Vue.js / TailwindCSS <br>
+✔ <b>Back-end</b> : Node.js / Express / Nest.js / Django  <br>
+✔ <b>Database</b> : Mysql /MongoDB <br>
+✔ <b>Programming-languages</b> : JavaScript / HTML / CSS / Python / Java <br>
 <br>
 
 </details>
