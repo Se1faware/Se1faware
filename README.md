@@ -9,7 +9,7 @@ Here are some ideas to get you started: -->
  -->
  
 <!-- dark, radical, merko, gruvbox, tokyonight, onedark, cobalt, synthwave, highcontrast, dracula  -->
- ![JR Wang GitHub stats](https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&theme=gruvbox)
+ ![JR Wang GitHub stats](https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&theme=synthwave)
 
 🧿 I am a full-stack software engineering
 
