@@ -94,10 +94,10 @@ Here are some ideas to get you started:
         <br>Express
     </td>
     <td align="center" width="96">
-        <a href="#Electron">
-            <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/electron/electron.png" width="48" height="48" alt="Electron" />
+        <a href="#Solidity">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.b4KUEVCvujOW-CK2jxJ9NAAAAA" width="48" height="48" alt="Electron" />
         </a>
-        <br>Electron
+        <br>Solidity
     </td>
     <td align="center" width="96">
         <a href="#Koa">
@@ -117,44 +117,6 @@ Here are some ideas to get you started:
         <br>NPM
     </td>
   </tr>
-<!--   <tr>
-    <td align="center" width="96">
-      <a href="#PHP" >
-        <img src="https://i.ibb.co/LzmYpDX/146-1466902-php-logo-png-transparent-php-logo-png-png-removebg-preview.png" width="48" height="48" alt="PHP" />
-      </a>
-      <br>PHP
-    </td>
-      <td align="center" width="96">
-      <a href="#laravel">
-        <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" width="48" height="48" alt="Laravel" />
-      </a>
-      <br>Laravel
-    </td>
-    <td align="center" width="96">
-      <a href="#Python" >
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="48" height="48" alt="Python" />
-      </a>
-      <br>Python
-    </td>
-    <td align="center" width="96">
-      <a href="#Django" >
-        <img src="https://raw.githubusercontent.com/github/explore/7456fdff59816d37ef383a6c8f32a26ff7332db2/topics/django/django.png" width="48" height="48" alt="Django" />
-      </a>
-      <br>Django
-    </td>
-    <td align="center" width="96">
-      <a href="#Go" >
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/go/go.png" width="48" height="48" alt="Go" />
-      </a>
-      <br>Go
-    </td>
-    <td align="center" width="96">
-      <a href="#Rails" >
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/rails/rails.png" width="48" height="48" alt="Rails" />
-      </a>
-      <br>Rails
-    </td>
-  </tr> -->
   <tr>
     <td align="center" width="96">
       <a href="#SQL" >
