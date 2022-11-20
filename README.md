@@ -2,21 +2,19 @@
 <!--
 **jiaoyanxia/jiaoyanxia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+Here are some ideas to get you started: -->
 
 
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
 
 
-
 🧿 I am a full-stack software engineering
 
-🕊️ Where am i： On the road of Full-Stack engineer
+🕊️ Where am i： On the road of Web3 Full-Stack engineer
 
-<!-- 🌱 I am currently learning data structures -->
 🌱 I am currently learning BlockChain
 
-📫 How to reach me: QQ - 978309462
+📫 How to reach me: w9783094562@gmail.com
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
 <br>
