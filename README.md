@@ -111,24 +111,18 @@ Here are some ideas to get you started:
       <br>JSON
     </td>
     <td align="center" width="96">
+      <a href="#Next JS" >
+        <img src="https://tse1.mm.bing.net/th?id=OIP.okiCUvTUJLtOqJv1dMzwpAHaHa" width="48" height="48" alt="SQL" />
+      </a>
+      <br>Next JS
+    </td>
+  </tr>
+  <tr>
+      <td align="center" width="96">
         <a href="#NPM">
             <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/npm/npm.png" width="48" height="48" alt="NPM" />
         </a>
         <br>NPM
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="96">
-      <a href="#SQL" >
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" width="48" height="48" alt="SQL" />
-      </a>
-      <br>SQL
-    </td>
-    <td align="center" width="96">
-      <a href="#MySQL">
-        <img src="https://www.logo.wine/a/logo/MySQL/MySQL-Logo.wine.svg" width="48" height="48" alt="MySQL" />
-      </a>
-      <br>MySQL
     </td>
     <td align="center" width="96">
       <a href="#Python" >
@@ -141,6 +135,12 @@ Here are some ideas to get you started:
         <img src="https://raw.githubusercontent.com/github/explore/7456fdff59816d37ef383a6c8f32a26ff7332db2/topics/django/django.png" width="48" height="48" alt="Django" />
       </a>
       <br>Django
+    </td>
+      <td align="center" width="96">
+      <a href="#MySQL">
+        <img src="https://www.logo.wine/a/logo/MySQL/MySQL-Logo.wine.svg" width="48" height="48" alt="MySQL" />
+      </a>
+      <br>MySQL
     </td>
     <td align="center" width="96">
       <a href="#MongoDB">
