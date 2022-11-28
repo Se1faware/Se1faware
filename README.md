@@ -11,7 +11,7 @@ Here are some ideas to get you started: -->
 <!-- dark, radical, merko, gruvbox, tokyonight, onedark, cobalt, synthwave, highcontrast, dracula  -->
  ![JR Wang GitHub stats](https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&theme=tokyonight)
 
-🧿 I am a full-stack software engineering
+🧿 I am a front-end software engineering
 
 🕊️ Where am i： On the road of Web3 Full-Stack engineer
 
