@@ -3,14 +3,6 @@
 **jiaoyanxia/jiaoyanxia** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started: -->
-
-<!-- 
-<img align="right" src="https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
- -->
- 
-<!-- dark, radical, merko, gruvbox, tokyonight, onedark, cobalt, synthwave, highcontrast, dracula  -->
- ![Code-Shrimpsss GitHub stats](https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight)
-
 🧿 I am a front-end software engineering
 
 🕊️ Where am i： On the road of Web3 Full-Stack engineer
@@ -18,6 +10,13 @@ Here are some ideas to get you started: -->
 🌱 I am currently learning BlockChain
 
 📫 How to reach me: w9783094562@gmail.com
+
+<!-- 
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=jiaoyanxia&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
+ -->
+ 
+<!-- dark, radical, merko, gruvbox, tokyonight, onedark, cobalt, synthwave, highcontrast, dracula  -->
+ ![Code-Shrimpsss GitHub stats](https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight)
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
 <br>
