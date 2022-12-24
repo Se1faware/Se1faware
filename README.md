@@ -54,7 +54,7 @@ Here are some ideas to get you started: -->
       <br>React
     </td>
     <td align="center" width="96">
-      <a href="#html5">
+      <a href="#Redux">
         <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" width="48" height="48" alt="Redux" />
       </a>
       <br>Redux
@@ -67,9 +67,9 @@ Here are some ideas to get you started: -->
     </td>
      <td align="center" width="96">
       <a href="#suhailkakar-tech">
-        <img src="https://www.vectorlogo.zone/logos/nuxtjs/nuxtjs-icon.svg" width="48" height="48" alt="Nuxtjs" />
+        <img src="https://pinia.vuejs.org/logo.svg" width="48" height="48" alt="Nuxtjs" />
       </a>
-      <br>Nuxt JS
+      <br>Pinia
     </td>  
   </tr>
   <tr>
