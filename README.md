@@ -155,7 +155,7 @@ Here are some ideas to get you started: -->
 ## Core skills
 ✔ <b>Web3-Chain</b> : Ethersjs / Solidity / Hardhat  <br>
 ✔ <b>Front-end</b> : React js / Next.js / Vue.js / TailwindCSS <br>
-✔ <b>Back-end</b> : Node.js / Express / Koa / Next.js / Django  <br>
+✔ <b>Back-end</b> : Node.js / Express / Koa / Django  <br>
 ✔ <b>Database</b> : Mysql / MongoDB / Redis <br>
 ✔ <b>Programming-languages</b> : JavaScript / TypeScript / HTML / CSS / Python  <br>
 <br>
