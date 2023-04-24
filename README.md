@@ -31,8 +31,8 @@ Here are some ideas to get you started: -->
 - Web Development
 - Blockchain & Smart contract -->
 
-## Language
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Code-Shrimpsss&hide=javascript,html)](https://github.com/Code-Shrimpsss)
+<!-- ## Language -->
+
 
 ## My Skills
 
@@ -151,6 +151,9 @@ Here are some ideas to get you started: -->
     </td>
   </tr>
 </table>
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Code-Shrimpsss&hide=javascript,html)](https://github.com/Code-Shrimpsss)
+
 <br>
 
 
