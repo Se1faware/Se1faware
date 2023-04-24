@@ -150,9 +150,9 @@ Here are some ideas to get you started: -->
       <br>Redis
     </td> -->
   </tr>
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Code-Shrimpsss&hide=javascript,html)](https://github.com/Code-Shrimpsss)
-</table>
 
+</table>
+<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Code-Shrimpsss&hide=javascript,html)](https://github.com/Code-Shrimpsss) -->
 
 <br>
 
