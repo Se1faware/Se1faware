@@ -68,12 +68,12 @@ Here are some ideas to get you started: -->
       </a>
       <br>Vue JS
     </td>
-     <td align="center" width="96">
+     <!-- <td align="center" width="96">
       <a href="#suhailkakar-tech">
         <img src="https://pinia.vuejs.org/logo.svg" width="48" height="48" alt="Nuxtjs" />
       </a>
       <br>Pinia
-    </td>  
+    </td>   -->
   </tr>
   <tr>
     <td align="center" width="96">
@@ -99,12 +99,12 @@ Here are some ideas to get you started: -->
             <img src="https://raw.githubusercontent.com/github/explore/e65ef46ef3e7bc457c93622f6a89fe8d3fd131d5/topics/graphql/graphql.png" width="48" height="48" alt="GraphQL" />
         </a>
         <br>GraphQL
-    <td align="center" width="96">
+    <!-- <td align="center" width="96">
       <a href="#JSON">
         <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/json/json.png" width="48" height="48" alt="JSON" />
       </a>
       <br>JSON
-    </td>
+    </td> -->
     <td align="center" width="96">
       <a href="#Next JS" >
         <img src="https://tse1.mm.bing.net/th?id=OIP.okiCUvTUJLtOqJv1dMzwpAHaHa" width="48" height="48" alt="SQL" />
@@ -143,12 +143,12 @@ Here are some ideas to get you started: -->
       </a>
       <br>MongoDB
     </td>
-    <td align="center" width="96">
+    <!-- <td align="center" width="96">
       <a href="#Redis">
         <img src="https://e7.pngegg.com/pngimages/540/594/png-clipart-redis-distributed-cache-go-database-caching-github-data-structure-redis-thumbnail.png" width="48" height="48" alt="Redis" />
       </a>
       <br>Redis
-    </td>
+    </td> -->
   </tr>
 </table>
 
