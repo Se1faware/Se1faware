@@ -31,6 +31,9 @@ Here are some ideas to get you started: -->
 - Web Development
 - Blockchain & Smart contract -->
 
+## Language
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Code-Shrimpsss&hide=javascript,html)](https://github.com/Code-Shrimpsss)
+
 ## My Skills
 
 <table align="center">
@@ -152,13 +155,16 @@ Here are some ideas to get you started: -->
 
 
 
-## Core skills
+<!-- ## Core skills
 ✔ <b>Web3-Chain</b> : Ethersjs / Solidity / Hardhat  <br>
 ✔ <b>Front-end</b> : React js / Next.js / Vue.js / TailwindCSS <br>
 ✔ <b>Back-end</b> : Node.js / Express / Koa / Django  <br>
 ✔ <b>Database</b> : Mysql / MongoDB / Redis <br>
 ✔ <b>Programming-languages</b> : JavaScript / TypeScript / HTML / CSS / Python  <br>
-<br>
+<br> -->
+
+## Dev Status
+[![CodeShrimp's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=Code-Shrimpsss&theme=react)](https://github.com/Code-Shrimpsss)
 
 </details>
 
