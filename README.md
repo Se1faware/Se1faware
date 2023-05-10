@@ -43,7 +43,7 @@ Here are some ideas to get you started: -->
 
 ## My Skills
 
-<table align="center">
+<table align="left">
   <tr>
     <td align="center" width="96">
       <a href="#js">
