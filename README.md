@@ -9,7 +9,6 @@ Here are some ideas to get you started: -->
  
 <!-- dark, radical, merko, gruvbox, tokyonight, onedark, cobalt, synthwave, highcontrast, dracula  -->
 <!--  ![Code-Shrimpsss GitHub stats](https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight) -->
-<img align="right" src="https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight" />
 
 🧿 I am a front-end software engineering
 
@@ -20,7 +19,13 @@ Here are some ideas to get you started: -->
 📫 How to reach me: w9783094562@gmail.com
 <!-- - ✨ Belief: Don't blow out your inspiration and your imagination，don't be a slave to your models. -- Vincent Van Gogh -->
 
-<br>
+<br />
+
+## Github Status
+
+<img align="left" src="https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight" />
+
+<br />
 
 <!-- <h3>I always produce best result.</h3>
 
@@ -166,8 +171,8 @@ Here are some ideas to get you started: -->
 ✔ <b>Programming-languages</b> : JavaScript / TypeScript / HTML / CSS / Python  <br>
 <br> -->
 
-## Dev Status
-[![CodeShrimp's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=Code-Shrimpsss&theme=react)](https://github.com/Code-Shrimpsss)
+<!-- ## Dev Status -->
+<!-- [![CodeShrimp's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=Code-Shrimpsss&theme=react)](https://github.com/Code-Shrimpsss) -->
 
 </details>
 
