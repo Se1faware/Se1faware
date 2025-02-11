@@ -1,18 +1,16 @@
 # Hello, World 👋
 
 Welcome to my GitHub profile!  
-I am a front-end software engineer on the path to becoming a Web3 full-stack developer, with a strong passion for exploring blockchain technology.
+I am a full-stack software engineer on the path to becoming a Web3 full-stack developer, with a strong passion for exploring blockchain technology.
 
----
 
 ## About Me
 
-- 🧿 **Profession**: Front-End Software Engineer  
-- 🕊️ **Focus**: Web3 Full-Stack Development  
+- 🧿 **Profession**: Full-Stack Engineer  
+- 🕊️ **Focus**: Web3 / Ai / Rust
 - 🌱 **Currently Learning**: Blockchain  
 - 📫 **Contact**: [w9783094562@gmail.com](mailto:w9783094562@gmail.com)
 
----
 
 ## GitHub Stats
 
@@ -20,7 +18,6 @@ I am a front-end software engineer on the path to becoming a Web3 full-stack dev
   <img src="https://github-readme-stats.vercel.app/api?username=Se1faware&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
 </div>
 
----
 
 ## My Skills
 
@@ -123,7 +120,6 @@ I am a front-end software engineer on the path to becoming a Web3 full-stack dev
   </tr>
 </table>
 
----
 
 ## Contact & Social
 
