@@ -126,6 +126,4 @@ I am a full-stack software engineer on the path to becoming a Web3 full-stack de
 [![Email](https://img.shields.io/badge/Email-w9783094562@gmail.com-c14438?style=for-the-badge&logo=gmail&logoColor=white)](mailto:w9783094562@gmail.com)
 <!-- You can add more social badges here if desired -->
 
----
-
 *Thank you for visiting, and I look forward to connecting with you!*
