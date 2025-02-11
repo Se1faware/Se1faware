@@ -9,7 +9,7 @@ I am a full-stack software engineer on the path to becoming a Web3 full-stack de
 - 🧿 **Profession**: Full-Stack Engineer  
 - 🕊️ **Focus**: Web3 / Ai / Rust
 - 🌱 **Currently Learning**: Blockchain  
-- 📫 **Contact**: [w9783094562@gmail.com](mailto:w9783094562@gmail.com)
+[![Email](https://img.shields.io/badge/Email-w9783094562@gmail.com-c14438?style=for-the-badge&logo=gmail&logoColor=white)](mailto:w9783094562@gmail.com)
 
 
 ## GitHub Stats
@@ -119,11 +119,5 @@ I am a full-stack software engineer on the path to becoming a Web3 full-stack de
     </td>
   </tr>
 </table>
-
-
-## Contact & Social
-
-[![Email](https://img.shields.io/badge/Email-w9783094562@gmail.com-c14438?style=for-the-badge&logo=gmail&logoColor=white)](mailto:w9783094562@gmail.com)
-<!-- You can add more social badges here if desired -->
 
 *Thank you for visiting, and I look forward to connecting with you!*
