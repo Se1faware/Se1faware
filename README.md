@@ -24,7 +24,7 @@ Here are some ideas to get you started: -->
 ## Github Status
 
 <div>
-<img align="center" src="https://github-readme-stats.vercel.app/api?username=Code-Shrimpsss&show_icons=true&theme=tokyonight" />
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=Se1faware&show_icons=true&theme=tokyonight" />
 </div>
 
 <br />
