@@ -9,8 +9,8 @@ with a strong passion for exploring blockchain technology.
 ## About Me
 
 - 🧿 **Profession**: Full-Stack Engineer  
-- 🕊️ **Focus**: Web3 / Ai / Rust
-- 🌱 **Currently Learning**: Blockchain  
+- 🕊️ **Focus**: Web3 / AI / Rust
+- 🌱 **Currently Learning**: Blockchain 
 
 
 ## My Skills
