@@ -2,6 +2,7 @@
 
 Welcome to my GitHub profile!  
 I am a full-stack software engineer on the path to becoming a Web3 full-stack developer, 
+<br />
 with a strong passion for exploring blockchain technology.
 
 
