@@ -1,7 +1,8 @@
-# Hello, World 👋
+# Hello, Coder 👋
 
 Welcome to my GitHub profile!  
-I am a full-stack software engineer on the path to becoming a Web3 full-stack developer, with a strong passion for exploring blockchain technology.
+I am a full-stack software engineer on the path to becoming a Web3 full-stack developer, 
+with a strong passion for exploring blockchain technology.
 
 
 ## About Me
@@ -9,14 +10,6 @@ I am a full-stack software engineer on the path to becoming a Web3 full-stack de
 - 🧿 **Profession**: Full-Stack Engineer  
 - 🕊️ **Focus**: Web3 / Ai / Rust
 - 🌱 **Currently Learning**: Blockchain  
-[![Email](https://img.shields.io/badge/Email-w9783094562@gmail.com-c14438?style=for-the-badge&logo=gmail&logoColor=white)](mailto:w9783094562@gmail.com)
-
-
-## GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Se1faware&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
-</div>
 
 
 ## My Skills
