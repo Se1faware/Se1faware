@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Generate black-white pixel GIFs + ASCII logo for Se1faware profile README."""
+"""Generate black-white pixel GIFs + ASCII logo for Se1faware profile README.
+
+v2: 2x finer grain (SCALE=4, double-resolution sprites), new skills.gif.
+"""
 import os
 from PIL import Image
 
@@ -9,7 +12,7 @@ os.makedirs(ASSETS, exist_ok=True)
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-SCALE = 8
+SCALE = 4
 
 
 def save_gif(frames, name, duration):
@@ -31,83 +34,88 @@ def put(px, w, h, x, y):
         px[x, y] = BLACK
 
 
+def scale(img):
+    return img.resize((img.width * SCALE, img.height * SCALE), Image.Resampling.NEAREST)
+
+
 # ---------------------------------------------------------------------------
-# hero.gif — 照镜子的时候,倒影先动了
-# 40x24: real person | mirror | reflection (mirrored person)
+# hero.gif — 照镜子的时候,倒影先动了 (80x48, fine grain)
 # ---------------------------------------------------------------------------
 def person_pixels(arm="down", blink=False):
     p = set()
-    # head (2,0)-(7,3), eyes = white gaps at (3,2),(6,2)
-    for y in range(4):
-        for x in range(2, 8):
-            if y == 2 and x in (3, 6) and not blink:
+    # head (6,0)-(17,9); eyes = white 2x2 gaps
+    for y in range(10):
+        for x in range(6, 18):
+            if not blink and y in (4, 5) and (9 <= x <= 10 or 15 <= x <= 16):
                 continue
             p.add((x, y))
-    # torso (1,4)-(8,9)
-    for y in range(4, 10):
-        for x in range(1, 9):
-            p.add((x, y))
-    # arm: outside the torso (1px gap)
-    # down = single column hanging beside body (y 8-12)
-    # wave = 2px-wide bar raised from shoulder to above head (y 0-6)
-    if arm == "down":
-        for y in range(8, 13):
-            p.add((10, y))
-    else:
-        for y in range(0, 7):
-            for x in (9, 10):
-                p.add((x, y))
-    # legs (2-3,10-12) & (6-7,10-12)
+    # neck (10,10)-(13,12)
     for y in range(10, 13):
-        for x in range(2, 4):
+        for x in range(10, 14):
             p.add((x, y))
-        for x in range(6, 8):
+    # torso (5,11)-(17,23)
+    for y in range(11, 24):
+        for x in range(5, 18):
             p.add((x, y))
-    # feet
-    for x in range(1, 4):
-        p.add((x, 13))
-    for x in range(6, 9):
-        p.add((x, 13))
+    # arm: 4px wide, 1px gap from torso (col 18)
+    # down = hanging beside body (y14-23), wave = raised beside head (y0-11)
+    if arm == "down":
+        for y in range(14, 24):
+            for x in range(19, 23):
+                p.add((x, y))
+    else:
+        for y in range(0, 12):
+            for x in range(19, 23):
+                p.add((x, y))
+    # legs (8-11,24-27) & (15-18,24-27)
+    for y in range(24, 28):
+        for x in range(8, 12):
+            p.add((x, y))
+        for x in range(15, 19):
+            p.add((x, y))
+    # feet row 28: (6-11) & (15-20)
+    for x in range(6, 12):
+        p.add((x, 28))
+    for x in range(15, 21):
+        p.add((x, 28))
     return p
 
 
 def draw_hero(frame):
-    w, h = 40, 24
+    w, h = 80, 48
     img, px = canvas(w, h)
     # ground
     for x in range(w):
-        put(px, w, h, x, 21)
-    # dashed mirror at x=20
-    for y in range(0, 22, 2):
-        put(px, w, h, 20, y)
-    # real person at offset (2,8) — feet land on the ground line (y=21)
+        put(px, w, h, x, 42)
+    # dashed mirror at x=40
+    for y in range(0, 43, 2):
+        put(px, w, h, 40, y)
     real = person_pixels("down", blink=(frame == 2))
-    # reflection waves on frames 1-2
     refl = person_pixels("wave" if frame in (1, 2) else "down")
     for sx, sy in real:
-        put(px, w, h, sx + 2, sy + 8)
+        put(px, w, h, sx + 4, sy + 13)
     for sx, sy in refl:
-        put(px, w, h, 27 + (13 - sx), sy + 8)
+        put(px, w, h, 53 + (27 - (sx + 4)), sy + 13)
     return img
 
 
 # ---------------------------------------------------------------------------
-# phases.gif — 观象 → 构序 → 观心 → 见性 (four squares light up)
+# phases.gif — 观象 → 构序 → 观心 → 见性 (88x24, 16px squares)
 # ---------------------------------------------------------------------------
 def draw_phases(frame):
-    w, h = 44, 12
+    w, h = 88, 24
     img, px = canvas(w, h)
-    squares = [(1, 2), (12, 2), (23, 2), (34, 2)]
-    lit = [1, 2, 3, 4, 4, 4, 4, 4][frame]
+    squares = [(2, 4), (24, 4), (46, 4), (68, 4)]
+    lit = [1, 2, 3, 4][frame]
     for ox, oy in squares[:lit]:
-        for x in range(ox, ox + 8):
-            for y in range(oy, oy + 8):
+        for x in range(ox, ox + 16):
+            for y in range(oy, oy + 16):
                 put(px, w, h, x, y)
     return img
 
 
 # ---------------------------------------------------------------------------
-# heart.gif — 心还在跳 (11x8 heart, beat = grows one row)
+# heart.gif — 心还在跳 (30x28, 2x of an 11x9 heart)
 # ---------------------------------------------------------------------------
 HEART = [
     ".###...###.",
@@ -122,43 +130,151 @@ HEART = [
 
 
 def draw_heart(pulse):
-    w, h = 15, 14
+    w, h = 30, 28
     img, px = canvas(w, h)
     rows = HEART + ([".....#....."] if pulse else [])
     for y, row in enumerate(rows):
         for x, ch in enumerate(row):
             if ch == "#":
-                put(px, w, h, x + 2, y + 2)
+                for dy in (0, 1):
+                    for dx in (0, 1):
+                        put(px, w, h, 4 + x * 2 + dx, 4 + y * 2 + dy)
     return img
 
 
 # ---------------------------------------------------------------------------
-# cursor.gif — terminal block cursor blinking
+# cursor.gif — terminal block cursor (20x28)
 # ---------------------------------------------------------------------------
 def draw_cursor(on):
-    w, h = 10, 14
+    w, h = 20, 28
     img, px = canvas(w, h)
     if on:
-        for x in range(3, 7):
-            for y in range(4, 10):
+        for x in range(6, 14):
+            for y in range(8, 18):
                 put(px, w, h, x, y)
     return img
 
 
 # ---------------------------------------------------------------------------
-# ASCII logo — SE1FAWARE in a custom 5x5 pixel font
+# skills.gif — 拆解 · 构建 · 觉察 · 行动 (132x36, 4 animated icons + pixel labels)
 # ---------------------------------------------------------------------------
 FONT = {
     "S": ["█████", "█....", "█████", "....█", "█████"],
     "E": ["█████", "█....", "████.", "█....", "█████"],
-    "1": ["..█..", "..█..", "..█..", "..█..", "█████"],
+    "1": [".██..", "█.█..", "..█..", "..█..", "█████"],
     "F": ["█████", "█....", "████.", "█....", "█...."],
     "A": ["..█..", ".█.█.", "█████", "█...█", "█...█"],
     "W": ["█...█", "█...█", "█.█.█", "██.██", "█...█"],
     "R": ["████.", "█...█", "████.", "█..█.", "█...█"],
+    "P": ["████.", "█...█", "████.", "█....", "█...."],
+    "L": ["█....", "█....", "█....", "█....", "█████"],
+    "I": ["█████", "..█..", "..█..", "..█..", "█████"],
+    "T": ["█████", "..█..", "..█..", "..█..", "..█.."],
+    "B": ["████.", "█...█", "████.", "█...█", "████."],
+    "U": ["█...█", "█...█", "█...█", "█...█", "█████"],
+    "D": ["████.", "█...█", "█...█", "█...█", "████."],
+    "C": ["█████", "█....", "█....", "█....", "█████"],
 }
 
+PANEL_W = 32
+ICON_X, ICON_Y = 6, 2
+ICON_S = 20
+LABEL_Y = 24
 
+
+def draw_label(px, w, h, panel_x, text):
+    glyphs = [FONT[c] for c in text]
+    tw = len(text) * 6 - 1  # 5px per char + 1px gap
+    ox = panel_x + (PANEL_W - tw) // 2
+    for gi, g in enumerate(glyphs):
+        for ry, row in enumerate(g):
+            for rx, ch in enumerate(row):
+                if ch == "█":
+                    put(px, w, h, ox + gi * 6 + rx, LABEL_Y + ry)
+
+
+def icon_split(px, w, h, ox, oy, apart):
+    # a box splitting in two
+    if not apart:
+        for y in range(2, 18):
+            for x in range(2, 18):
+                if x in (2, 17) or y in (2, 17) or x in (9, 10):
+                    put(px, w, h, ox + x, oy + y)
+    else:
+        for y in range(2, 18):
+            for x in range(2, 9):
+                if x in (2, 8) or y in (2, 17):
+                    put(px, w, h, ox + x, oy + y)
+            for x in range(11, 18):
+                if x in (11, 17) or y in (2, 17):
+                    put(px, w, h, ox + x, oy + y)
+
+
+def icon_build(px, w, h, ox, oy, blink):
+    # house: roof triangle + walls + door + window
+    for y, xs in zip(range(2, 6), (range(7, 13), range(6, 14), range(5, 15), range(4, 16))):
+        for x in xs:
+            put(px, w, h, ox + x, oy + y)
+    for x in range(3, 17):
+        put(px, w, h, ox + x, oy + 6)   # wall top
+        put(px, w, h, ox + x, oy + 17)  # wall bottom
+    for y in range(6, 18):
+        put(px, w, h, ox + 3, oy + y)
+        put(px, w, h, ox + 16, oy + y)
+    for x in range(8, 12):              # door (filled)
+        for y in range(11, 18):
+            put(px, w, h, ox + x, oy + y)
+    for x in range(5, 8):               # window
+        for y in range(8, 11):
+            if blink:
+                if x in (5, 7) or y in (8, 10):
+                    put(px, w, h, ox + x, oy + y)
+            else:
+                put(px, w, h, ox + x, oy + y)
+
+
+def icon_see(px, w, h, ox, oy, shift):
+    # eye outline + darting pupil
+    for y, xs in zip(range(7, 13), (range(5, 15), range(3, 17), range(3, 17), range(4, 16), range(7, 13), range(9, 11))):
+        for x in xs:
+            put(px, w, h, ox + x, oy + y)
+    pupil_x = 9 + shift
+    for x in range(pupil_x, pupil_x + 2):
+        for y in range(8, 10):
+            put(px, w, h, ox + x, oy + y)
+
+
+def icon_act(px, w, h, ox, oy, move):
+    # block arrow + motion dashes
+    for y in range(8, 12):
+        for x in range(2, 14):
+            put(px, w, h, ox + x, oy + y)
+    for y, xs in zip((6, 7, 12, 13), (range(15, 16), range(14, 17), range(14, 17), range(15, 16))):
+        for x in xs:
+            put(px, w, h, ox + x, oy + y)
+    for yy, xx in ((16, 4), (18, 9)):
+        for x in range(xx + move, xx + 3 + move):
+            put(px, w, h, ox + x, oy + yy)
+
+
+def draw_skills(frame):
+    w, h = 132, 36
+    img, px = canvas(w, h)
+    panels = [
+        (2, "SPLIT", lambda o: icon_split(px, w, h, o, ICON_Y, apart=(frame == 1))),
+        (34, "BUILD", lambda o: icon_build(px, w, h, o, ICON_Y, blink=(frame == 1))),
+        (66, "SEE", lambda o: icon_see(px, w, h, o, ICON_Y, shift=(1 if frame == 1 else 0))),
+        (98, "ACT", lambda o: icon_act(px, w, h, o, ICON_Y, move=(2 if frame == 1 else 0))),
+    ]
+    for p, label, draw in panels:
+        draw(p)
+        draw_label(px, w, h, p, label)
+    return img
+
+
+# ---------------------------------------------------------------------------
+# ASCII logo — SE1FAWARE
+# ---------------------------------------------------------------------------
 def ascii_logo(text="SE1FAWARE"):
     lines = [""] * 5
     for ch in text:
@@ -168,19 +284,12 @@ def ascii_logo(text="SE1FAWARE"):
     return "\n".join(line.rstrip() for line in lines)
 
 
-def scale(img):
-    return img.resize((img.width * SCALE, img.height * SCALE), Image.Resampling.NEAREST)
-
-
 if __name__ == "__main__":
-    # hero: 4 frames x 400ms
     save_gif([scale(draw_hero(i)) for i in range(4)], "hero.gif", 400)
-    # phases: fill 1->2->3->4, hold the full state, then snap-reset
     save_gif([scale(draw_phases(i)) for i in range(4)], "phases.gif", [300, 300, 300, 1200])
-    # heart: lub-dub, 4 frames x 240ms
     save_gif([scale(draw_heart(p)) for p in (False, True, False, True)], "heart.gif", 240)
-    # cursor: 2 frames x 500ms
     save_gif([scale(draw_cursor(True)), scale(draw_cursor(False))], "cursor.gif", 500)
+    save_gif([scale(draw_skills(i)) for i in range(2)], "skills.gif", 500)
 
     print()
     print(ascii_logo())
