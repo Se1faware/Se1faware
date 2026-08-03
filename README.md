@@ -9,11 +9,14 @@
 ```
 
 <p align="center">
-  <img src="assets/hero.gif" width="320" alt="照镜子的时候，倒影先动了" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.gif">
+    <img src="assets/hero.gif" width="320" alt="照镜子的时候，倒影先动了" />
+  </picture>
   <br>
   <b>保持觉察 · 持续构建</b>
   <br>
-  <code>self-aware · self-building</code> <img src="assets/cursor.gif" width="24" alt="" />
+  <code>self-aware · self-building</code>
 </p>
 
 ---
@@ -26,15 +29,12 @@
 ### 技能特点 — 我如何工作
 
 <p align="center">
-  <img src="assets/skills.gif" width="528" alt="拆解：复杂系统 → 可执行的最小单元；构建：全链路自己动手；觉察：用工程方法做自我观察；行动：只发布跑起来的东西" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark.gif">
+    <img src="assets/skills.gif" width="528" alt="拆解 → 构建 → 觉察 → 行动；观象 → 构序 → 观心 → 见性" />
+  </picture>
   <br>
   <code>拆解 · 构建 · 觉察 · 行动</code>
-</p>
-
-<p align="center">
-  <img src="assets/phases.gif" width="352" alt="观象 → 构序 → 观心 → 见性" />
-  <br>
-  <code>观象 → 构序 → 观心 → 见性</code>
 </p>
 
 ### 现在在构建
@@ -44,7 +44,10 @@
 - **Agentic × 3D 创意工程** — Web3D / 生成艺术 / 像素动画
 
 <p align="center">
-  <img src="assets/heart.gif" width="60" alt="" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/heart-dark.gif">
+    <img src="assets/heart.gif" width="60" alt="" />
+  </picture>
   <br>
   <em>心还在跳，构建还在继续。</em>
 </p>

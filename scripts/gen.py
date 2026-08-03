@@ -4,7 +4,7 @@
 v2: 2x finer grain (SCALE=4, double-resolution sprites), new skills.gif.
 """
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "..", "assets")
@@ -100,21 +100,6 @@ def draw_hero(frame):
 
 
 # ---------------------------------------------------------------------------
-# phases.gif — 观象 → 构序 → 观心 → 见性 (88x24, 16px squares)
-# ---------------------------------------------------------------------------
-def draw_phases(frame):
-    w, h = 88, 24
-    img, px = canvas(w, h)
-    squares = [(2, 4), (24, 4), (46, 4), (68, 4)]
-    lit = [1, 2, 3, 4][frame]
-    for ox, oy in squares[:lit]:
-        for x in range(ox, ox + 16):
-            for y in range(oy, oy + 16):
-                put(px, w, h, x, y)
-    return img
-
-
-# ---------------------------------------------------------------------------
 # heart.gif — 心还在跳 (30x28, 2x of an 11x9 heart)
 # ---------------------------------------------------------------------------
 HEART = [
@@ -143,20 +128,7 @@ def draw_heart(pulse):
 
 
 # ---------------------------------------------------------------------------
-# cursor.gif — terminal block cursor (20x28)
-# ---------------------------------------------------------------------------
-def draw_cursor(on):
-    w, h = 20, 28
-    img, px = canvas(w, h)
-    if on:
-        for x in range(6, 14):
-            for y in range(8, 18):
-                put(px, w, h, x, y)
-    return img
-
-
-# ---------------------------------------------------------------------------
-# skills.gif — 拆解 · 构建 · 觉察 · 行动 (132x36, 4 animated icons + pixel labels)
+# skills.gif — 拆解 · 构建 · 觉察 · 行动 + 观象→构序→观心→见性 (132x52)
 # ---------------------------------------------------------------------------
 FONT = {
     "S": ["█████", "█....", "█████", "....█", "█████"],
@@ -258,17 +230,26 @@ def icon_act(px, w, h, ox, oy, move):
 
 
 def draw_skills(frame):
-    w, h = 132, 36
+    # 132x52: 4 animated icons + pixel labels on top, 观象→构序→观心→见性
+    # squares row below (fill 1->2->3->4). Icons flip state every frame.
+    w, h = 132, 52
     img, px = canvas(w, h)
+    icon_state = frame % 2
+    lit = frame + 1
     panels = [
-        (2, "SPLIT", lambda o: icon_split(px, w, h, o, ICON_Y, apart=(frame == 1))),
-        (34, "BUILD", lambda o: icon_build(px, w, h, o, ICON_Y, blink=(frame == 1))),
-        (66, "SEE", lambda o: icon_see(px, w, h, o, ICON_Y, shift=(1 if frame == 1 else 0))),
-        (98, "ACT", lambda o: icon_act(px, w, h, o, ICON_Y, move=(2 if frame == 1 else 0))),
+        (2, "SPLIT", lambda o: icon_split(px, w, h, o, ICON_Y, apart=(icon_state == 1))),
+        (34, "BUILD", lambda o: icon_build(px, w, h, o, ICON_Y, blink=(icon_state == 1))),
+        (66, "SEE", lambda o: icon_see(px, w, h, o, ICON_Y, shift=(1 if icon_state == 1 else 0))),
+        (98, "ACT", lambda o: icon_act(px, w, h, o, ICON_Y, move=(2 if icon_state == 1 else 0))),
     ]
     for p, label, draw in panels:
         draw(p)
         draw_label(px, w, h, p, label)
+    # phases squares row, aligned under each panel
+    for ox, oy in [(2, 34), (24, 34), (46, 34), (68, 34)][:lit]:
+        for x in range(ox, ox + 16):
+            for y in range(oy, oy + 16):
+                put(px, w, h, x, y)
     return img
 
 
@@ -284,12 +265,16 @@ def ascii_logo(text="SE1FAWARE"):
     return "\n".join(line.rstrip() for line in lines)
 
 
+def save_both(name, frames, duration):
+    """Save light (black-on-white) + dark (white-on-black) variants."""
+    save_gif(frames, name, duration)
+    save_gif([ImageOps.invert(f) for f in frames], name.replace(".gif", "-dark.gif"), duration)
+
+
 if __name__ == "__main__":
-    save_gif([scale(draw_hero(i)) for i in range(4)], "hero.gif", 400)
-    save_gif([scale(draw_phases(i)) for i in range(4)], "phases.gif", [300, 300, 300, 1200])
-    save_gif([scale(draw_heart(p)) for p in (False, True, False, True)], "heart.gif", 240)
-    save_gif([scale(draw_cursor(True)), scale(draw_cursor(False))], "cursor.gif", 500)
-    save_gif([scale(draw_skills(i)) for i in range(2)], "skills.gif", 500)
+    save_both("hero.gif", [scale(draw_hero(i)) for i in range(4)], 400)
+    save_both("skills.gif", [scale(draw_skills(i)) for i in range(4)], [300, 300, 300, 1200])
+    save_both("heart.gif", [scale(draw_heart(p)) for p in (False, True, False, True)], 240)
 
     print()
     print(ascii_logo())
