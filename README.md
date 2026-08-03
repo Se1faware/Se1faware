@@ -37,7 +37,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark.gif">
-    <img src="assets/skills.gif" width="528" alt="拆解 → 构建 → 觉察 → 行动；观象 → 构序 → 观心 → 见性" />
+    <img src="assets/skills.gif" width="540" alt="拆解 → 构建 → 觉察 → 行动" />
   </picture>
   <br>
   <code>拆解 · 构建 · 觉察 · 行动</code>

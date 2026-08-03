@@ -34,8 +34,8 @@ def put(px, w, h, x, y):
         px[x, y] = BLACK
 
 
-def scale(img):
-    return img.resize((img.width * SCALE, img.height * SCALE), Image.Resampling.NEAREST)
+def scale(img, factor=SCALE):
+    return img.resize((img.width * factor, img.height * factor), Image.Resampling.NEAREST)
 
 
 # ---------------------------------------------------------------------------
@@ -154,10 +154,9 @@ FONT = {
     "·": [".....", "..█..", "..█..", "..█..", "....."],
 }
 
-PANEL_W = 32
-ICON_X, ICON_Y = 6, 2
-ICON_S = 20
-LABEL_Y = 24
+PANEL_W = 44
+ICON_Y = 4
+LABEL_Y = 40
 
 
 def draw_label(px, w, h, panel_x, text):
@@ -171,91 +170,131 @@ def draw_label(px, w, h, panel_x, text):
                     put(px, w, h, ox + gi * 6 + rx, LABEL_Y + ry)
 
 
-def icon_split(px, w, h, ox, oy, apart):
-    # a box splitting in two
-    if not apart:
-        for y in range(2, 18):
-            for x in range(2, 18):
-                if x in (2, 17) or y in (2, 17) or x in (9, 10):
-                    put(px, w, h, ox + x, oy + y)
+def box(px, w, h, ox, oy, x1, y1, x2, y2):
+    for x in range(x1, x2 + 1):
+        put(px, w, h, ox + x, oy + y1)
+        put(px, w, h, ox + x, oy + y2)
+    for y in range(y1, y2 + 1):
+        put(px, w, h, ox + x1, oy + y)
+        put(px, w, h, ox + x2, oy + y)
+
+
+def fill(px, w, h, ox, oy, x1, y1, x2, y2):
+    for x in range(x1, x2 + 1):
+        for y in range(y1, y2 + 1):
+            put(px, w, h, ox + x, oy + y)
+
+
+def hline(px, w, h, ox, oy, x1, x2, y):
+    for x in range(x1, x2 + 1):
+        put(px, w, h, ox + x, oy + y)
+
+
+def vline(px, w, h, ox, oy, x, y1, y2):
+    for y in range(y1, y2 + 1):
+        put(px, w, h, ox + x, oy + y)
+
+
+def icon_split(px, w, h, ox, oy, frame):
+    # a gridded block; one unit cracks out and flies away
+    box(px, w, h, ox, oy, 4, 6, 23, 25)
+    vline(px, w, h, ox, oy, 13, 7, 24)
+    vline(px, w, h, ox, oy, 14, 7, 24)
+    hline(px, w, h, ox, oy, 5, 22, 15)
+    hline(px, w, h, ox, oy, 5, 22, 16)
+    dx, dy = (1, -1) if frame == 0 else (5, -5)
+    box(px, w, h, ox, oy, 14 + dx, 6 + dy, 23 + dx, 14 + dy)
+    fill(px, w, h, ox, oy, 16 + dx, 9 + dy, 21 + dx, 11 + dy)
+
+
+def icon_build(px, w, h, ox, oy, frame):
+    # three stacked layers; a block drops into place
+    hline(px, w, h, ox, oy, 4, 27, 27)  # ground
+    box(px, w, h, ox, oy, 5, 22, 26, 26)
+    hline(px, w, h, ox, oy, 6, 25, 24)
+    box(px, w, h, ox, oy, 9, 17, 22, 21)
+    hline(px, w, h, ox, oy, 10, 21, 19)
+    box(px, w, h, ox, oy, 12, 12, 19, 16)
+    hline(px, w, h, ox, oy, 13, 18, 14)
+    fy = 3 if frame == 0 else 8  # falling block
+    box(px, w, h, ox, oy, 14, fy, 17, fy + 3)
+
+
+def icon_see(px, w, h, ox, oy, frame):
+    # an eye whose pupil holds a tiny self — gaze shifts side to side
+    dx = 2 if frame == 1 else 0
+    hline(px, w, h, ox, oy, 11, 20, 9)   # upper lid
+    hline(px, w, h, ox, oy, 9, 22, 10)
+    hline(px, w, h, ox, oy, 8, 23, 11)
+    hline(px, w, h, ox, oy, 7, 24, 12)
+    vline(px, w, h, ox, oy, 7, 12, 19)   # eye corners
+    vline(px, w, h, ox, oy, 24, 12, 19)
+    hline(px, w, h, ox, oy, 8, 23, 19)   # lower lid
+    hline(px, w, h, ox, oy, 9, 22, 20)
+    hline(px, w, h, ox, oy, 11, 20, 21)
+    put(px, w, h, ox + 12, oy + 8)       # lashes
+    put(px, w, h, ox + 16, oy + 8)
+    put(px, w, h, ox + 19, oy + 8)
+    # pupil (black) minus highlight and the tiny self (both stay white)
+    for y in range(13, 19):
+        x1, x2 = (13 + dx, 18 + dx) if y in (13, 18) else (11 + dx, 20 + dx)
+        for x in range(x1, x2 + 1):
+            if 12 + dx <= x <= 13 + dx and y in (13, 14):
+                continue  # highlight
+            if 15 + dx <= x <= 16 + dx and 14 <= y <= 18:
+                continue  # the self inside the pupil
+            put(px, w, h, ox + x, oy + y)
+
+
+def icon_act(px, w, h, ox, oy, frame):
+    # a running figure: legs alternate, speed lines drift
+    hline(px, w, h, ox, oy, 6, 26, 24)   # ground
+    hline(px, w, h, ox, oy, 15, 18, 5)   # head
+    vline(px, w, h, ox, oy, 14, 6, 8)
+    vline(px, w, h, ox, oy, 19, 6, 8)
+    hline(px, w, h, ox, oy, 15, 18, 9)
+    put(px, w, h, ox + 16, oy + 7)       # eye
+    for y in range(10, 17):              # leaning torso
+        hline(px, w, h, ox, oy, 15, 21, y)
+    if frame == 0:                       # arms
+        vline(px, w, h, ox, oy, 22, 10, 13)
+        vline(px, w, h, ox, oy, 13, 11, 14)
     else:
-        for y in range(2, 18):
-            for x in range(2, 9):
-                if x in (2, 8) or y in (2, 17):
-                    put(px, w, h, ox + x, oy + y)
-            for x in range(11, 18):
-                if x in (11, 17) or y in (2, 17):
-                    put(px, w, h, ox + x, oy + y)
-
-
-def icon_build(px, w, h, ox, oy, blink):
-    # house: roof triangle + walls + door + window
-    for y, xs in zip(range(2, 6), (range(7, 13), range(6, 14), range(5, 15), range(4, 16))):
-        for x in xs:
-            put(px, w, h, ox + x, oy + y)
-    for x in range(3, 17):
-        put(px, w, h, ox + x, oy + 6)   # wall top
-        put(px, w, h, ox + x, oy + 17)  # wall bottom
-    for y in range(6, 18):
-        put(px, w, h, ox + 3, oy + y)
-        put(px, w, h, ox + 16, oy + y)
-    for x in range(8, 12):              # door (filled)
-        for y in range(11, 18):
-            put(px, w, h, ox + x, oy + y)
-    for x in range(5, 8):               # window
-        for y in range(8, 11):
-            if blink:
-                if x in (5, 7) or y in (8, 10):
-                    put(px, w, h, ox + x, oy + y)
-            else:
-                put(px, w, h, ox + x, oy + y)
-
-
-def icon_see(px, w, h, ox, oy, shift):
-    # eye outline + darting pupil
-    for y, xs in zip(range(7, 13), (range(5, 15), range(3, 17), range(3, 17), range(4, 16), range(7, 13), range(9, 11))):
-        for x in xs:
-            put(px, w, h, ox + x, oy + y)
-    pupil_x = 9 + shift
-    for x in range(pupil_x, pupil_x + 2):
-        for y in range(8, 10):
-            put(px, w, h, ox + x, oy + y)
-
-
-def icon_act(px, w, h, ox, oy, move):
-    # block arrow + motion dashes
-    for y in range(8, 12):
-        for x in range(2, 14):
-            put(px, w, h, ox + x, oy + y)
-    for y, xs in zip((6, 7, 12, 13), (range(15, 16), range(14, 17), range(14, 17), range(15, 16))):
-        for x in xs:
-            put(px, w, h, ox + x, oy + y)
-    for yy, xx in ((16, 4), (18, 9)):
-        for x in range(xx + move, xx + 3 + move):
-            put(px, w, h, ox + x, oy + yy)
+        vline(px, w, h, ox, oy, 13, 10, 13)
+        vline(px, w, h, ox, oy, 22, 11, 14)
+    if frame == 0:                       # legs: diagonal stride
+        for x, y in ((19, 17), (20, 18), (21, 19), (22, 20), (23, 21), (23, 22), (23, 23)):
+            put(px, w, h, ox + x, oy + y)  # front leg forward
+        for x, y in ((14, 17), (13, 18), (12, 19), (11, 20), (10, 21), (10, 22), (10, 23)):
+            put(px, w, h, ox + x, oy + y)  # back leg kicking
+    else:
+        for x, y in ((20, 17), (21, 18), (22, 19), (23, 20), (24, 21), (24, 22), (24, 23)):
+            put(px, w, h, ox + x, oy + y)  # front leg further
+        for x, y in ((13, 17), (12, 18), (11, 19), (10, 20), (9, 21), (9, 22), (9, 23)):
+            put(px, w, h, ox + x, oy + y)  # back leg further
+    if frame == 0:                       # speed lines
+        hline(px, w, h, ox, oy, 3, 5, 12)
+        hline(px, w, h, ox, oy, 4, 6, 16)
+        hline(px, w, h, ox, oy, 3, 4, 20)
+    else:
+        hline(px, w, h, ox, oy, 4, 6, 12)
+        hline(px, w, h, ox, oy, 5, 7, 16)
+        hline(px, w, h, ox, oy, 4, 5, 20)
 
 
 def draw_skills(frame):
-    # 132x52: 4 animated icons + pixel labels on top, 观象→构序→观心→见性
-    # squares row below (fill 1->2->3->4). Icons flip state every frame.
-    w, h = 132, 52
+    # 180x48: four 32px animated icons + pixel labels (SCALE 3 -> 540x144)
+    w, h = 180, 48
     img, px = canvas(w, h)
-    icon_state = frame % 2
-    lit = frame + 1
     panels = [
-        (2, "SPLIT", lambda o: icon_split(px, w, h, o, ICON_Y, apart=(icon_state == 1))),
-        (34, "BUILD", lambda o: icon_build(px, w, h, o, ICON_Y, blink=(icon_state == 1))),
-        (66, "SEE", lambda o: icon_see(px, w, h, o, ICON_Y, shift=(1 if icon_state == 1 else 0))),
-        (98, "ACT", lambda o: icon_act(px, w, h, o, ICON_Y, move=(2 if icon_state == 1 else 0))),
+        (2, "SPLIT", lambda o: icon_split(px, w, h, o, ICON_Y, frame)),
+        (46, "BUILD", lambda o: icon_build(px, w, h, o, ICON_Y, frame)),
+        (90, "SEE", lambda o: icon_see(px, w, h, o, ICON_Y, frame)),
+        (134, "ACT", lambda o: icon_act(px, w, h, o, ICON_Y, frame)),
     ]
     for p, label, draw in panels:
         draw(p)
         draw_label(px, w, h, p, label)
-    # phases squares row, aligned under each panel
-    for ox, oy in [(2, 34), (24, 34), (46, 34), (68, 34)][:lit]:
-        for x in range(ox, ox + 16):
-            for y in range(oy, oy + 16):
-                put(px, w, h, x, y)
     return img
 
 
@@ -308,7 +347,7 @@ def save_both(name, frames, duration):
 
 if __name__ == "__main__":
     save_both("hero.gif", [scale(draw_hero(i)) for i in range(4)], 400)
-    save_both("skills.gif", [scale(draw_skills(i)) for i in range(4)], [300, 300, 300, 1200])
+    save_both("skills.gif", [scale(draw_skills(i), 3) for i in range(2)], 600)
     save_both("heart.gif", [scale(draw_heart(p)) for p in (False, True, False, True)], 240)
     save_png_both("tagline.png", scale(draw_tagline()))
 
