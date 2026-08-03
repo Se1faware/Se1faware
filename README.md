@@ -11,12 +11,15 @@
 █████  █████  █████  █....  █...█  █...█  █...█  █...█  █████
       </pre>
       <br>
-      <b>self-aware · self-building</b>
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/tagline-dark.png">
+        <img src="assets/tagline.png" width="308" alt="stay aware · keep building" />
+      </picture>
     </td>
     <td align="center" valign="middle">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.gif">
-        <img src="assets/hero.gif" width="240" alt="照镜子的时候，倒影先动了" />
+        <img src="assets/hero.gif" width="260" alt="照镜子的时候，倒影先动了" />
       </picture>
     </td>
   </tr>

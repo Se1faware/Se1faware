@@ -146,6 +146,12 @@ FONT = {
     "U": ["█...█", "█...█", "█...█", "█...█", "█████"],
     "D": ["████.", "█...█", "█...█", "█...█", "████."],
     "C": ["█████", "█....", "█....", "█....", "█████"],
+    "Y": ["█...█", "█...█", ".█.█.", "..█..", "..█.."],
+    "K": ["█...█", "█..█.", "███..", "█..█.", "█...█"],
+    "N": ["█...█", "██..█", "█.█.█", "█..██", "█...█"],
+    "G": [".████", "█....", "█..██", "█...█", ".████"],
+    " ": [".....", ".....", ".....", ".....", "....."],
+    "·": [".....", "..█..", "..█..", "..█..", "....."],
 }
 
 PANEL_W = 32
@@ -254,6 +260,35 @@ def draw_skills(frame):
 
 
 # ---------------------------------------------------------------------------
+# tagline.png — STAY AWARE · KEEP BUILDING (77x15 pixel-font subtitle)
+# ---------------------------------------------------------------------------
+def draw_tagline():
+    w, h = 77, 15
+    img, px = canvas(w, h)
+
+    def put_text(line, y):
+        glyphs = [FONT[c] for c in line]
+        tw = len(line) * 6 - 1
+        ox = (w - tw) // 2
+        for gi, g in enumerate(glyphs):
+            for ry, row in enumerate(g):
+                for rx, ch in enumerate(row):
+                    if ch == "█":
+                        put(px, w, h, ox + gi * 6 + rx, y + ry)
+
+    put_text("STAY AWARE", 0)
+    for ry in range(3):  # middle dot
+        put(px, w, h, w // 2, 6 + ry)
+    put_text("KEEP BUILDING", 10)
+    return img
+
+
+def save_png_both(name, img):
+    img.save(os.path.join(ASSETS, name))
+    ImageOps.invert(img).save(os.path.join(ASSETS, name.replace(".png", "-dark.png")))
+
+
+# ---------------------------------------------------------------------------
 # ASCII logo — SE1FAWARE
 # ---------------------------------------------------------------------------
 def ascii_logo(text="SE1FAWARE"):
@@ -275,6 +310,7 @@ if __name__ == "__main__":
     save_both("hero.gif", [scale(draw_hero(i)) for i in range(4)], 400)
     save_both("skills.gif", [scale(draw_skills(i)) for i in range(4)], [300, 300, 300, 1200])
     save_both("heart.gif", [scale(draw_heart(p)) for p in (False, True, False, True)], 240)
+    save_png_both("tagline.png", scale(draw_tagline()))
 
     print()
     print(ascii_logo())
