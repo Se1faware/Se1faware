@@ -10,21 +10,17 @@
 ....█  █....  ..█..  █....  █...█  ██.██  █...█  █..█.  █....
 █████  █████  █████  █....  █...█  █...█  █...█  █...█  █████
       </pre>
+      <br>
+      <b>self-aware · self-building</b>
     </td>
     <td align="center" valign="middle">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.gif">
-        <img src="assets/hero.gif" width="220" alt="照镜子的时候，倒影先动了" />
+        <img src="assets/hero.gif" width="240" alt="照镜子的时候，倒影先动了" />
       </picture>
     </td>
   </tr>
 </table>
-
-<p align="center">
-  <b>保持觉察 · 持续构建</b>
-  <br>
-  <code>self-aware · self-building</code>
-</p>
 
 ---
 
