@@ -43,42 +43,55 @@ def scale(img, factor=SCALE):
 # ---------------------------------------------------------------------------
 def person_pixels(arm="down", blink=False):
     p = set()
-    # head (6,0)-(17,9); eyes = white 2x2 gaps
+    # head (8,0)-(19,9); eyes = white 2x2 gaps
     for y in range(10):
-        for x in range(6, 18):
-            if not blink and y in (4, 5) and (9 <= x <= 10 or 15 <= x <= 16):
+        for x in range(8, 20):
+            if not blink and y in (4, 5) and (11 <= x <= 12 or 17 <= x <= 18):
                 continue
             p.add((x, y))
-    # neck (10,10)-(13,12)
+    # neck (12,10)-(15,12)
     for y in range(10, 13):
-        for x in range(10, 14):
+        for x in range(12, 16):
             p.add((x, y))
-    # torso (5,11)-(17,23)
+    # torso (7,11)-(19,23)
     for y in range(11, 24):
-        for x in range(5, 18):
+        for x in range(7, 20):
             p.add((x, y))
-    # arm: 4px wide, 1px gap from torso (col 18)
+    # arms: both sides, 4px wide, 1px gap from torso (cols 6 and 20)
     # down = hanging beside body (y14-23), wave = raised beside head (y0-11)
     if arm == "down":
         for y in range(14, 24):
-            for x in range(19, 23):
+            for x in range(1, 6):      # left arm
+                p.add((x, y))
+            for x in range(21, 26):    # right arm
                 p.add((x, y))
     else:
         for y in range(0, 12):
-            for x in range(19, 23):
+            for x in range(1, 6):      # left arm raised
                 p.add((x, y))
-    # legs (8-11,24-27) & (15-18,24-27)
+            for x in range(21, 26):    # right arm raised
+                p.add((x, y))
+    # legs (10-13,24-27) & (17-20,24-27)
     for y in range(24, 28):
-        for x in range(8, 12):
+        for x in range(10, 14):
             p.add((x, y))
-        for x in range(15, 19):
+        for x in range(17, 21):
             p.add((x, y))
-    # feet row 28: (6-11) & (15-20)
-    for x in range(6, 12):
-        p.add((x, 28))
-    for x in range(15, 21):
-        p.add((x, 28))
+    # feet rows 28-29: (8-13) & (17-22) — sole at y29 lands on ground y42
+    for y in range(28, 30):
+        for x in range(8, 14):
+            p.add((x, y))
+        for x in range(17, 23):
+            p.add((x, y))
     return p
+
+
+def render_text(px, w, h, text, ox, oy):
+    for gi, g in enumerate(FONT[c] for c in text):
+        for ry, row in enumerate(g):
+            for rx, ch in enumerate(row):
+                if ch == "█":
+                    put(px, w, h, ox + gi * 6 + rx, oy + ry)
 
 
 def draw_hero(frame):
@@ -90,12 +103,17 @@ def draw_hero(frame):
     # dashed mirror at x=40
     for y in range(0, 43, 2):
         put(px, w, h, 40, y)
-    real = person_pixels("down", blink=(frame == 2))
-    refl = person_pixels("wave" if frame in (1, 2) else "down")
+    # turn-taking: the person greets first, the mirror answers
+    real = person_pixels("wave" if frame == 1 else "down", blink=(frame == 1))
+    refl = person_pixels("wave" if frame == 2 else "down")
     for sx, sy in real:
         put(px, w, h, sx + 4, sy + 13)
     for sx, sy in refl:
         put(px, w, h, 53 + (27 - (sx + 4)), sy + 13)
+    if frame == 1:
+        render_text(px, w, h, "HELLO", 3, 2)
+    elif frame == 2:
+        render_text(px, w, h, "HI", 57, 2)
     return img
 
 
