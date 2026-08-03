@@ -1,5 +1,10 @@
 <!-- Se1faware · 自我觉察的工程师 -->
 
+### whoami
+
+全栈偏前端的开发工程师，正在成为 Creative Engineer，关注前沿 AI 趋势。
+把代码当镜子，把系统当修行 —— 这是我认真在做的事。
+
 <table align="center">
   <tr>
     <td align="center" valign="middle">
@@ -9,12 +14,7 @@
 █████  ████.  ..█..  ████.  █████  █.█.█  █████  ████.  ████.
 ....█  █....  ..█..  █....  █...█  ██.██  █...█  █..█.  █....
 █████  █████  █████  █....  █...█  █...█  █...█  █...█  █████
-      </pre>
-      <br>
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="assets/tagline-dark.png">
-        <img src="assets/tagline.png" width="308" alt="stay aware · keep building" />
-      </picture>
+<p style="margin:0; text-align:center; padding-top: 10px;">Stay aware · keep building</p></pre>
     </td>
     <td align="center" valign="middle">
       <picture>
@@ -25,16 +25,16 @@
   </tr>
 </table>
 
----
-
-### whoami
-
-全栈偏前端的开发工程师，正在成为 Creative Engineer，关注前沿 AI 趋势。
-把代码当镜子，把系统当修行 —— 这是我认真在做的事。
-
-### 技能特点 — 我如何工作
+### 我如何工作
 
 <p align="center">
+  I treat engineering as a way of observing myself.<br>
+  <br>
+  <b>Decompose</b> — Cut to the smallest actionable unit: abstraction is not simplification, it is cutting at the right seam.<br>
+  <b>Build</b> — Patterns are the crystallized trade-offs of others: understand the trade-off, not the template; judgment comes only from building.<br>
+  <b>Perceive</b> — Systems are projections of thought: where the architecture ends, the thinking ends.<br>
+  <b>Act</b> — Creation lives inside constraints: the work promises not perfection, but that it runs.<br>
+  <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/skills-dark.gif">
     <img src="assets/skills.gif" width="540" alt="拆解 → 构建 → 觉察 → 行动" />
