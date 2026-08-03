@@ -1,117 +1,80 @@
-# Hello, Coder 👋
+<!--
+  Se1faware · 自我觉察的工程师
+  ─────────────────────────────────────────
+  本页面没有 emoji。
+  黑白就够了，留白也是像素。
+  先看见自己，再构建世界。
+-->
 
-Welcome to my GitHub profile!  
-I am a full-stack software engineer on the path to becoming a Web3 full-stack developer, 
-<br />
-with a strong passion for exploring blockchain technology.
+```text
+█████  █████  ..█..  █████  ..█..  █...█  ..█..  ████.  █████
+█....  █....  ..█..  █....  .█.█.  █...█  .█.█.  █...█  █....
+█████  ████.  ..█..  ████.  █████  █.█.█  █████  ████.  ████.
+....█  █....  ..█..  █....  █...█  ██.██  █...█  █..█.  █....
+█████  █████  █████  █....  █...█  █...█  █...█  █...█  █████
+```
 
+<p align="center">
+  <img src="assets/hero.gif" width="320" alt="照镜子的时候，倒影先动了" />
+  <br>
+  <em>照镜子的时候，倒影先动了。</em>
+  <br>
+  <b>保持觉察 · 持续构建</b>
+  <br>
+  <code>self-aware · self-building</code> <img src="assets/cursor.gif" width="24" alt="" />
+</p>
 
-## About Me
+---
 
-- 🧿 **Profession**: Full-Stack Engineer  
-- 🕊️ **Focus**: Web3 / AI / Rust
-- 🌱 **Currently Learning**: Blockchain 
+### 01 · whoami
 
+五年前端出身，现在是全栈工程师，正在成为 Creative Engineer。
 
-## My Skills
+把代码当镜子，把系统当修行 —— 这是我认真在做的事。
 
-<table align="center">
-  <tr>
-    <td align="center" width="100">
-      <a href="#javascript">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" width="48" height="48" alt="JavaScript" />
-      </a>
-      <br>JavaScript
-    </td>
-    <td align="center" width="100">
-      <a href="#typescript">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width="48" height="48" alt="TypeScript" />
-      </a>
-      <br>TypeScript
-    </td>
-    <td align="center" width="100">
-      <a href="#react">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" width="48" height="48" alt="React" />
-      </a>
-      <br>React
-    </td>
-    <td align="center" width="100">
-      <a href="#redux">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" width="48" height="48" alt="Redux" />
-      </a>
-      <br>Redux
-    </td>
-    <td align="center" width="100">
-      <a href="#vuejs">
-        <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-icon.svg" width="48" height="48" alt="Vue.js" />
-      </a>
-      <br>Vue.js
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="100">
-      <a href="#node">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" width="48" height="48" alt="Node.js" />
-      </a>
-      <br>Node.js
-    </td>
-    <td align="center" width="100">
-      <a href="#express">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png" width="48" height="48" alt="Express" />
-      </a>
-      <br>Express
-    </td>
-    <td align="center" width="100">
-      <a href="#solidity">
-        <img src="https://tse3.mm.bing.net/th?id=OIP.b4KUEVCvujOW-CK2jxJ9NAAAAA" width="48" height="48" alt="Solidity" />
-      </a>
-      <br>Solidity
-    </td>
-    <td align="center" width="100">
-      <a href="#graphql">
-        <img src="https://raw.githubusercontent.com/github/explore/e65ef46ef3e7bc457c93622f6a89fe8d3fd131d5/topics/graphql/graphql.png" width="48" height="48" alt="GraphQL" />
-      </a>
-      <br>GraphQL
-    </td>
-    <td align="center" width="100">
-      <a href="#nextjs">
-        <img src="https://tse1.mm.bing.net/th?id=OIP.okiCUvTUJLtOqJv1dMzwpAHaHa" width="48" height="48" alt="Next.js" />
-      </a>
-      <br>Next.js
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="100">
-      <a href="#npm">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/npm/npm.png" width="48" height="48" alt="NPM" />
-      </a>
-      <br>NPM
-    </td>
-    <td align="center" width="100">
-      <a href="#python">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" width="48" height="48" alt="Python" />
-      </a>
-      <br>Python
-    </td>
-    <td align="center" width="100">
-      <a href="#django">
-        <img src="https://raw.githubusercontent.com/github/explore/7456fdff59816d37ef383a6c8f32a26ff7332db2/topics/django/django.png" width="48" height="48" alt="Django" />
-      </a>
-      <br>Django
-    </td>
-    <td align="center" width="100">
-      <a href="#mysql">
-        <img src="https://www.logo.wine/a/logo/MySQL/MySQL-Logo.wine.svg" width="48" height="48" alt="MySQL" />
-      </a>
-      <br>MySQL
-    </td>
-    <td align="center" width="100">
-      <a href="#mongodb">
-        <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mongodb/mongodb.png" width="48" height="48" alt="MongoDB" />
-      </a>
-      <br>MongoDB
-    </td>
-  </tr>
-</table>
+### 02 · 技能特点 — 我如何工作
 
-*Thank you for visiting, and I look forward to connecting with you!*
+不是我会什么，是我怎么干活。
+
+| 特点 | 说明 |
+|---|---|
+| **拆解者** | 复杂系统 → 可执行的最小单元。先观象，再构序。 |
+| **构建者** | 架构、交互、像素级审美，全链路自己动手。 |
+| **觉察者** | 命理是概率模型，代码是确定模型。我站在中间，用工程方法做自我观察。 |
+| **行动者** | 作品是今天能力的照片。只发布跑起来的东西。 |
+
+<p align="center">
+  <img src="assets/phases.gif" width="352" alt="观象 → 构序 → 观心 → 见性" />
+  <br>
+  <code>观象 → 构序 → 观心 → 见性</code>
+</p>
+
+### 03 · 开发理念
+
+1. **行动 > 情绪。** 等情绪变好，是最大的时间黑洞。
+2. **秩序外化。** 把混沌写成系统，把系统交给工具，把自己留给创造。
+3. **作品是今天能力的照片。** 不修图，只重拍。
+4. **工具能造的，不亲手造第二遍。**
+5. **少即是多。** 黑白就够了。
+
+### 04 · 现在在构建
+
+- **定一下 (DecisionCoach)** — 帮助停止过度分析的决策训练器：四轴分级，给出思考时限与下一步行动
+- **AI Agent × 命理** — 把八字/紫微做成可对话、可推演的系统
+- **创意工程** — Web3D / 生成艺术 / 像素动画（[FE-Animation-Collection](https://github.com/Se1faware/FE-Animation-Collection)）
+- **博客** — 技术与算法随笔（[se1f-aware-Blog](https://github.com/Se1faware/se1f-aware-Blog)）
+- **开源之旅** — 正在经历第一次 issue，和第一个 PR
+
+<p align="center">
+  <img src="assets/heart.gif" width="60" alt="" />
+  <br>
+  <em>心还在跳，构建还在继续。</em>
+</p>
+
+---
+
+<p align="center">
+  <code>Se1faware = self-aware.</code>
+  <br>
+  <em>先看见自己，再构建世界。</em>
+</p>
