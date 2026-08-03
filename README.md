@@ -1,19 +1,26 @@
 <!-- Se1faware · 自我觉察的工程师 -->
 
-```text
+<table align="center">
+  <tr>
+    <td align="center" valign="middle">
+      <pre>
 █████  █████  .██..  █████  ..█..  █...█  ..█..  ████.  █████
 █....  █....  █.█..  █....  .█.█.  █...█  .█.█.  █...█  █....
 █████  ████.  ..█..  ████.  █████  █.█.█  █████  ████.  ████.
 ....█  █....  ..█..  █....  █...█  ██.██  █...█  █..█.  █....
 █████  █████  █████  █....  █...█  █...█  █...█  █...█  █████
-```
+      </pre>
+    </td>
+    <td align="center" valign="middle">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.gif">
+        <img src="assets/hero.gif" width="220" alt="照镜子的时候，倒影先动了" />
+      </picture>
+    </td>
+  </tr>
+</table>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.gif">
-    <img src="assets/hero.gif" width="320" alt="照镜子的时候，倒影先动了" />
-  </picture>
-  <br>
   <b>保持觉察 · 持续构建</b>
   <br>
   <code>self-aware · self-building</code>
