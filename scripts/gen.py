@@ -150,6 +150,9 @@ FONT = {
     "K": ["█...█", "█..█.", "███..", "█..█.", "█...█"],
     "N": ["█...█", "██..█", "█.█.█", "█..██", "█...█"],
     "G": [".████", "█....", "█..██", "█...█", ".████"],
+    "H": ["█...█", "█...█", "█████", "█...█", "█...█"],
+    "O": ["█████", "█...█", "█...█", "█...█", "█████"],
+    "M": ["█...█", "██.██", "█.█.█", "█...█", "█...█"],
     " ": [".....", ".....", ".....", ".....", "....."],
     "·": [".....", "..█..", "..█..", "..█..", "....."],
 }
@@ -299,6 +302,168 @@ def draw_skills(frame):
 
 
 # ---------------------------------------------------------------------------
+# dev-icons.gif — 608x64 long strip, 6 x 48px animated icons, space-between
+# BTC coin flip / bot face / taiji spin / code brackets / gear / blocks
+# ---------------------------------------------------------------------------
+def icon_btc(px, w, h, ox, oy, frame):
+    c = 24
+    narrow = frame % 2 == 1
+    for y in range(48):
+        for x in range(48):
+            dx, dy = x - c, y - c
+            ex = dx * 2 if narrow else dx
+            d2 = ex * ex + dy * dy
+            if 361 <= d2 <= 441:                    # outer ring r19-21
+                put(px, w, h, ox + x, oy + y)
+            elif not narrow and 156 <= d2 <= 169:   # inner ring r12.5-13
+                put(px, w, h, ox + x, oy + y)
+    if narrow:
+        vline(px, w, h, ox, oy, 24, 19, 29)         # slim ₿ while flipping
+    else:
+        vline(px, w, h, ox, oy, 24, 17, 31)
+        hline(px, w, h, ox, oy, 20, 24, 18)
+        hline(px, w, h, ox, oy, 20, 24, 20)
+        hline(px, w, h, ox, oy, 20, 24, 28)
+        hline(px, w, h, ox, oy, 20, 24, 30)
+    fill(px, w, h, ox, oy, 22, 2, 25, 3)            # cardinal ticks
+    fill(px, w, h, ox, oy, 44, 22, 45, 25)
+    fill(px, w, h, ox, oy, 22, 44, 25, 45)
+    fill(px, w, h, ox, oy, 2, 22, 3, 25)
+
+
+def icon_bot(px, w, h, ox, oy, frame):
+    blink = frame == 2
+    fill(px, w, h, ox, oy, 22, 3, 26, 5)            # antenna bulb
+    if blink:
+        fill(px, w, h, ox, oy, 24, 4, 24, 4)        # light off
+    vline(px, w, h, ox, oy, 24, 6, 10)
+    fill(px, w, h, ox, oy, 7, 17, 8, 24)            # side ears
+    fill(px, w, h, ox, oy, 39, 17, 40, 24)
+    for y in range(10, 36):                          # rounded head frame
+        for x in range(11, 37):
+            corner = (x in (11, 36) and y in (10, 35))
+            if (x in (11, 36) or y in (10, 35)) and not corner:
+                put(px, w, h, ox + x, oy + y)
+    if blink:                                        # eyes -> closed lines
+        hline(px, w, h, ox, oy, 18, 20, 20)
+        hline(px, w, h, ox, oy, 27, 29, 20)
+    else:                                            # 3x4 eyes + highlight
+        for y in range(18, 22):
+            for x in range(18, 21):
+                if not (x == 18 and y == 18):
+                    put(px, w, h, ox + x, oy + y)
+            for x in range(27, 30):
+                if not (x == 27 and y == 18):
+                    put(px, w, h, ox + x, oy + y)
+    fill(px, w, h, ox, oy, 21, 28, 26, 29)           # mouth
+
+
+def icon_taiji(px, w, h, ox, oy, frame):
+    c = 24
+    reverse = frame % 2 == 1
+    for y in range(48):
+        for x in range(48):
+            dx, dy = x - c, y - c
+            d2 = dx * dx + dy * dy
+            if 361 <= d2 <= 441:                     # ring r19-21
+                put(px, w, h, ox + x, oy + y)
+                continue
+            if d2 > 400:
+                continue
+            in_left = x < 24
+            black = in_left != reverse
+            if not reverse:                          # eyes swap on flip
+                white_eye = 19 <= x <= 22 and 9 <= y <= 12
+                black_eye = 26 <= x <= 29 and 36 <= y <= 39
+            else:
+                white_eye = 26 <= x <= 29 and 9 <= y <= 12
+                black_eye = 19 <= x <= 22 and 36 <= y <= 39
+            if (black and not white_eye) or black_eye:
+                put(px, w, h, ox + x, oy + y)
+
+
+def icon_code(px, w, h, ox, oy, frame):
+    for i in range(12):                              # 2px brackets
+        for t in range(2):
+            put(px, w, h, ox + 20 - i, oy + 12 + i + t)
+            put(px, w, h, ox + 20 - i + t, oy + 12 + i)
+            put(px, w, h, ox + 20 - i, oy + 36 - i - t)
+            put(px, w, h, ox + 20 - i + t, oy + 36 - i)
+            put(px, w, h, ox + 28 + i, oy + 12 + i + t)
+            put(px, w, h, ox + 28 + i - t, oy + 12 + i)
+            put(px, w, h, ox + 28 + i, oy + 36 - i - t)
+            put(px, w, h, ox + 28 + i - t, oy + 36 - i)
+    if frame % 2 == 0:                               # slash / vs \
+        for i in range(10):
+            put(px, w, h, ox + 23 + i, oy + 14 + i)
+            put(px, w, h, ox + 24 + i, oy + 14 + i)
+        hline(px, w, h, ox, oy, 17, 31, 41)          # cursor blink
+    else:
+        for i in range(10):
+            put(px, w, h, ox + 32 - i, oy + 14 + i)
+            put(px, w, h, ox + 31 - i, oy + 14 + i)
+
+
+def icon_gear(px, w, h, ox, oy, frame):
+    c = 24
+    diag = frame % 2 == 1
+    for y in range(48):
+        for x in range(48):
+            dx, dy = x - c, y - c
+            d2 = dx * dx + dy * dy
+            if 289 <= d2 <= 361:                     # outer ring r17-19
+                put(px, w, h, ox + x, oy + y)
+            elif 81 <= d2 <= 121:                    # inner ring r9-11
+                put(px, w, h, ox + x, oy + y)
+    if not diag:
+        fill(px, w, h, ox, oy, 22, 1, 25, 4)         # N E S W teeth
+        fill(px, w, h, ox, oy, 43, 22, 46, 25)
+        fill(px, w, h, ox, oy, 22, 43, 25, 46)
+        fill(px, w, h, ox, oy, 1, 22, 4, 25)
+        vline(px, w, h, ox, oy, 24, 12, 18)          # cardinal spokes
+        vline(px, w, h, ox, oy, 24, 29, 35)
+        hline(px, w, h, ox, oy, 12, 18, 24)
+        hline(px, w, h, ox, oy, 29, 35, 24)
+    else:
+        fill(px, w, h, ox, oy, 32, 4, 35, 7)         # diagonal teeth
+        fill(px, w, h, ox, oy, 40, 32, 43, 35)
+        fill(px, w, h, ox, oy, 12, 40, 15, 43)
+        fill(px, w, h, ox, oy, 4, 12, 7, 15)
+        for i in range(6):                           # diagonal spokes
+            put(px, w, h, ox + 24 + i, oy + 12 + i)
+            put(px, w, h, ox + 24 - i, oy + 12 + i)
+            put(px, w, h, ox + 24 + i, oy + 36 - i)
+            put(px, w, h, ox + 24 - i, oy + 36 - i)
+
+
+def icon_blocks(px, w, h, ox, oy, frame):
+    hline(px, w, h, ox, oy, 8, 39, 42)               # ground
+    fill(px, w, h, ox, oy, 10, 35, 37, 41)           # base layer
+    fill(px, w, h, ox, oy, 14, 27, 33, 34)           # mid layer
+    fill(px, w, h, ox, oy, 18, 19, 29, 26)           # top layer
+    fy = 6 if frame % 2 == 0 else 10
+    box(px, w, h, ox, oy, 21, fy, 26, fy + 5)        # falling block
+    if frame % 2 == 0:
+        put(px, w, h, ox + 23, oy + 3)               # drop trails
+        put(px, w, h, ox + 24, oy + 4)
+
+
+def draw_dev_icons(frame):
+    w, h = 608, 64
+    img, px = canvas(w, h)
+    for i, fn in enumerate((
+        lambda o: icon_btc(px, w, h, o, 8, frame),
+        lambda o: icon_bot(px, w, h, o, 8, frame),
+        lambda o: icon_taiji(px, w, h, o, 8, frame),
+        lambda o: icon_code(px, w, h, o, 8, frame),
+        lambda o: icon_gear(px, w, h, o, 8, frame),
+        lambda o: icon_blocks(px, w, h, o, 8, frame),
+    )):
+        fn(i * 112)  # 48px icon + 64px gap, first flush-left, last flush-right
+    return img
+
+
+# ---------------------------------------------------------------------------
 # tagline.png — STAY AWARE · KEEP BUILDING (77x15 pixel-font subtitle)
 # ---------------------------------------------------------------------------
 def draw_tagline():
@@ -328,6 +493,22 @@ def save_png_both(name, img):
 
 
 # ---------------------------------------------------------------------------
+# section headings — pixel-font titles (no GitHub h1 border possible)
+# ---------------------------------------------------------------------------
+def draw_heading(text):
+    glyphs = [FONT[c] for c in text]
+    tw = len(text) * 6 - 1
+    w, h = tw + 8, 13  # 4px margins each side
+    img, px = canvas(w, h)
+    for gi, g in enumerate(glyphs):
+        for ry, row in enumerate(g):
+            for rx, ch in enumerate(row):
+                if ch == "█":
+                    put(px, w, h, 4 + gi * 6 + rx, 4 + ry)
+    return img
+
+
+# ---------------------------------------------------------------------------
 # ASCII logo — SE1FAWARE
 # ---------------------------------------------------------------------------
 def ascii_logo(text="SE1FAWARE"):
@@ -348,8 +529,12 @@ def save_both(name, frames, duration):
 if __name__ == "__main__":
     save_both("hero.gif", [scale(draw_hero(i)) for i in range(4)], 400)
     save_both("skills.gif", [scale(draw_skills(i), 3) for i in range(2)], 600)
+    save_both("dev-icons.gif", [scale(draw_dev_icons(i)) for i in range(4)], 400)
     save_both("heart.gif", [scale(draw_heart(p)) for p in (False, True, False, True)], 240)
     save_png_both("tagline.png", scale(draw_tagline()))
+    save_png_both("heading-whoami.png", scale(draw_heading("WHOAMI")))
+    save_png_both("heading-how-i-work.png", scale(draw_heading("HOW I WORK")))
+    save_png_both("heading-now-building.png", scale(draw_heading("NOW BUILDING")))
 
     print()
     print(ascii_logo())
