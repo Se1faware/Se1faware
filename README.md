@@ -1,14 +1,5 @@
 <!-- Se1faware · 自我觉察的工程师 -->
 
-<p align="center"><img src="assets/heading-whoami.png" alt="whoami" /></p>
-
-<p align="center">
-A full-stack engineer becoming a Creative Engineer, tracking AI's frontier.<br>
-I build where intelligence meets creativity.<br>
-Code is my mirror; systems are my practice.<br>
-</p>
-
-
 <table align="center">
   <tr>
     <td align="center" valign="middle">
@@ -27,7 +18,17 @@ Code is my mirror; systems are my practice.<br>
       </picture>
     </td>
   </tr>
-</table>
+</table><br>
+
+<p align="center"><img src="assets/heading-whoami.png" alt="whoami" /></p>
+
+<p align="center">
+A full-stack engineer becoming a Creative Engineer, tracking AI's frontier.<br>
+I build where intelligence meets creativity.<br>
+Code is my mirror, systems are my practice.<br>
+</p>
+
+
 
 <br><p align="center"><img src="assets/heading-how-i-work.png" alt="How I Work" /></p>
 
@@ -50,8 +51,8 @@ Code is my mirror; systems are my practice.<br>
 <br><p align="center"><img src="assets/heading-now-building.png" alt="Now Building" /></p>
 
 - **DecisionCoach** — a decision trainer against over-analysis.
-- **AI Agent × Chinese Metaphysics** — BaZi and Zi Wei Dou Shu, made conversational and computable.
 - **Agentic × 3D Creative Engineering** — Web3D, generative art, and pixel animation.
+- **AI Agent × Chinese Metaphysics** — Four Pillars of Destiny and the I Ching — conversational and computable.
 
 <p align="center">
   <picture>
@@ -62,8 +63,8 @@ Code is my mirror; systems are my practice.<br>
 
 ---
 <p align="center">
-  <code>Se1faware = self-aware.</code><br>
-  <em>The heart is still beating. Keep building.</em><br>
+  <code>While I breathe, I create.</code><br>
+  <code>To see yourself is to begin building.</code><br>
       <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/heart-dark.gif">
     <img src="assets/heart.gif" width="66.6" alt="" />
